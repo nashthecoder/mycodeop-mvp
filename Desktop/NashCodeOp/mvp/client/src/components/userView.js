@@ -6,6 +6,6 @@ export default class userView extends Component {
             <div>
                 
             </div>
-        )
+        );
     }
 }
