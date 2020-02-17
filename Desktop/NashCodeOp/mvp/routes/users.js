@@ -18,7 +18,7 @@ router.get("/", function(req, res, next) {
 });
 
 //GET/id db(`SELECT * from USERS where id = 2;`)
-/* router.get("/:id", function(req, res, next) {
+router.get("/:id", function(req, res, next) {
   db(`SELECT * FROM users where id = "${req.params.id}";`)
     .then(results => {
       res.send(results.data);
@@ -82,7 +82,7 @@ db(`SELECT * FROM USERS where id = "${req.params.id}";`)
 });
 
 
-/* //DELETE from USERS where id = 1; 
+//DELETE from USERS where id = 1; 
 router.delete("/:id", function(req, res, next) {
   db(`DELETE FROM users where id = "${req.params.id}"`);
   db(`SELECT * FROM users ORDER BY id ASC;`)
@@ -91,6 +91,6 @@ router.delete("/:id", function(req, res, next) {
       res.send(results.data);
     })
     .catch(err => res.status(500).send(err));
-});  */
+}); 
 
 module.exports = router;
