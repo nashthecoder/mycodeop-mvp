@@ -1,7 +1,5 @@
 import React from 'react';
 //import logo from './logo.svg';
-import AdminView from "./components/adminView";
-import UserView from "./components/userView";
 import './App.css';
 
 
