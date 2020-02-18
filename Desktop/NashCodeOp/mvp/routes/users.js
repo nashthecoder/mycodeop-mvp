@@ -24,7 +24,7 @@ router.get("/:id", function(req, res, next) {
       res.send(results.data);
     })
     .catch(err => res.status(500).send(err));
-});  */
+}); 
 
 //GET/users/id/narrative
 router.get("/:id/narrative", function(req, res, next) {
