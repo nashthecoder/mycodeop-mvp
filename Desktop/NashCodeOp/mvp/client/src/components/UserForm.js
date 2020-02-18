@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import OrgForm from './OrgForm';
+//import OrgForm from './OrgForm';
+import NarrativeForm from './NarrativeForm.js'
+import FinancialForm from './FinancialForm.js'
 
 export class UserForm extends Component {
     state = {
@@ -36,23 +38,28 @@ handleChange = input => e =>{
 
     render() {
         const { step } = this.state;
-        const { orgName, projectName, projectCode, region, city, grantAmount, grantPeriod } = this.state;
-        const values = { orgName, projectName, projectCode, region, city, grantAmount, grantPeriod }
+        const { reportPeriod, projecSummary, taskCompleted, taskPending, taskDelayed, risks, issues } = this.state;
+        const values = { reportPeriod, projecSummary, taskCompleted, taskPending, taskDelayed, risks, issues }
         
         switch(step) {
             case 1: 
                 return (
-                    <OrgForm 
+                    < NarrativeForm
                     nextStep={this.nextStep}
                     handleChange={this.handleChange}
                     values={values}
                 />
             )
             case 2:
-                return  <h1>NarrativeForm</h1>
+                return (
+                    < FinancialForm
+                    nextStep={this.nextStep}
+                    prevStep={this.prevStep}
+                    handleChange={this.handleChange}
+                    values={values}
+                />
+                )
             case 3:
-                return  <h1>FinancialForm</h1>
-            case 4:
                 return  <h1>Confirm</h1>
         }
             
