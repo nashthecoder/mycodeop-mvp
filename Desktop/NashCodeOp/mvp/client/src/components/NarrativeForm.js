@@ -16,36 +16,36 @@ export class NarrativeForm extends Component {
             <React.Fragment>
                 <AppBar title="Narrative Report" />
                 <TextField 
-                hintText="Enter Reporting Period"
-                floatingLabeltext="Reporting Period"
+                hintText="Enter Date XXXX - XX - XX"
+                floatingLabeltext="Report Period"
                 onChange={handleChange('reportPeriod')}
                 defaultValue={values.reportPeriod}
                 />
                 <br/>
                 <TextField 
                 hintText="Enter Project Summary"
-                floatingLabeltext="Project Summary"
+                floatingLabeltext=" Project Summary "
                 onChange={handleChange('projectSummary')}
                 defaultValue={values.projectSummary}
                 />
                 <br/>
                 <TextField 
-                hintText="Enter Tasks Completed"
-                floatingLabeltext="Tasks Completed"
+                hintText="Enter Task Completed"
+                floatingLabeltext="Task Completed"
                 onChange={handleChange('taskCompleted')}
                 defaultValue={values.taskCompleted}
                 />
                 <br/>
                 <TextField 
-                hintText="Enter Tasks Pending"
-                floatingLabeltext="Tasks Pending"
+                hintText="Enter Task Pending"
+                floatingLabeltext="Task Pending"
                 onChange={handleChange('taskPending')}
                 defaultValue={values.region}
                 />
                 <br/>
                 <TextField 
-                hintText="Enter Tasks Delayed"
-                floatingLabeltext="Tasks Delayed"
+                hintText="Enter Task Delayed"
+                floatingLabeltext="TasksDelayed"
                 onChange={handleChange('taskDelayed')}
                 defaultValue={values.taskDelayed}
                 />

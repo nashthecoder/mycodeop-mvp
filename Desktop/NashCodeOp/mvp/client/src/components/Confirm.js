@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+/* import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
-import {List, ListItem} from 'material-ui/List';
+import { List, ListItem, ListItemText} from 'material-ui/List';
 import RaisedButton from 'material-ui/RaisedButton';
 
 export class Confirm extends Component {
@@ -9,46 +9,50 @@ export class Confirm extends Component {
         e.preventDefault();
 //Process for here Fetch. 
         this.props.nextStep();
-    };
+    }
+
     back = e => {
         e.preventDefault();
         this.props.prevStep();
     };
+
     render() {
-        const { values : { reportPeriod, projectSummary, taskCompleted, 
-            taskPending, taskDelayed, risks, issues }} = this.props;
+        const { 
+            values: { reportPeriod, projectSummary, taskCompleted, 
+            taskPending, taskDelayed, risks, issues }
+        } = this.props;
         return (
             <MuiThemeProvider>
             <React.Fragment>
-                <AppBar title="Confirm Report Complete" />
+                <AppBar title="Confirm Report Data" />
                 <List>
                     <ListItem>
-                        primaryText="Report Period"
-                        secondaryText={ reportPeriod }
+                        <ListItemText primary="Report Period"
+                        secondary={ reportPeriod } />
                     </ListItem>
                     <ListItem>
-                        primaryText="Project Summary"
-                        secondaryText={ projectSummary }
+                    <ListItemText primary="Project Summary"
+                        secondary={ projectSummary } />
                     </ListItem>
                     <ListItem>
-                        primaryText="Task Completed"
-                        secondaryText={ taskCompleted }
+                    <ListItemText primary="Task Completed"
+                        secondary={ taskCompleted } />
                     </ListItem>
                     <ListItem>
-                        primaryText="Task Pending"
-                        secondaryText={ taskPending }
+                    <ListItemText primary="Task Pending"
+                        secondary={ taskPending } />
                     </ListItem>
                     <ListItem>
-                        primaryText="Task Delayed"
-                        secondaryText={ taskDelayed }
+                    <ListItemText primary="Task Delayed"
+                        secondary={ taskDelayed } />
                     </ListItem>
                     <ListItem>
-                        primaryText="Risks"
-                        secondaryText={ risks }
+                    <ListItemText primary="Risks"
+                        secondary={ risks } />
                     </ListItem>
                     <ListItem>
-                        primaryText="Issues"
-                        secondaryText={ issues }
+                    <ListItemText primary="Issues"
+                        secondary={ issues } />
                     </ListItem>
                 </List>
                 <br />
@@ -75,4 +79,5 @@ const styles = {
 
 }
 
-export default Confirm
+export default Confirm;
+ */
