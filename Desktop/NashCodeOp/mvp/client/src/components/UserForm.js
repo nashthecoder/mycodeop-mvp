@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 //import OrgForm from './OrgForm';
 import NarrativeForm from './NarrativeForm.js';
-import FinancialForm from './FinancialForm.js';
-import Confirm from './Confirm.js';
+import FinancialForm from './FinancialForm.js'
 
 export class UserForm extends Component {
     state = {
@@ -61,13 +60,7 @@ handleChange = input => e =>{
                 />
                 )
             case 3:
-                return < Confirm 
-                nextStep={this.nextStep}
-                prevStep={this.prevStep}
-                />
-
-            case 4:
-                return  <h1>Submit</h1>
+                return  <h1>Thank You For Your Submission</h1>
         }
             
     }
