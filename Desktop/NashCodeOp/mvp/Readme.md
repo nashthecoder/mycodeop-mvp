@@ -1,7 +1,7 @@
 # Project Title
 
 #Grant Tracker 
-# Full Stack To Do App
+# Full Stack App
 
 # It should contain the following features: 
 Submit and monitor grant reports
