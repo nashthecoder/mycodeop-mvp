@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 //import OrgForm from './OrgForm';
 import NarrativeForm from './NarrativeForm.js';
-import FinancialForm from './FinancialForm.js'
+import FinancialForm from './FinancialForm.js';
+import Success from './Success.js';
 
 export class UserForm extends Component {
     state = {
@@ -13,7 +14,7 @@ export class UserForm extends Component {
         city:  '',      
         grantAmount:'', 
         grantPeriod:''
-    }
+    };
 
 //Proceed to the next step
 nextStep = () => {
@@ -49,7 +50,7 @@ handleChange = input => e =>{
                     handleChange={this.handleChange}
                     values={values}
                 />
-            )
+            );
             case 2:
                 return (
                     < FinancialForm
@@ -58,9 +59,9 @@ handleChange = input => e =>{
                     handleChange={this.handleChange}
                     values={values}
                 />
-                )
+                );
             case 3:
-                return  <h1>Thank You For Your Submission</h1>
+                return < Success />
         }
             
     }
