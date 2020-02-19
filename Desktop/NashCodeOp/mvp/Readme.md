@@ -3,11 +3,11 @@
 #Grant Tracker 
 # Full Stack To Do App
 
-# If conains the following features: 
+# It should contain the following features: 
 Submit and monitor grant reports
 Check the status of grant payments
 Receive email notifications on reports
-uploaded and payments disbursed
+Uploaded and payments disbursed
 Request a copy of a grant letter
 Update contact, staff, and payment information 
 
