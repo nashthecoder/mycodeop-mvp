@@ -19,11 +19,111 @@
 5. Install packages MySQL, Nodemon, or Dotenv: npm install mysql nodemon dotenv
 6. In file package.json, remove jade from the dependencies list
 7. Install dependencies with npm install or yarn
-8. Created model folder create files database.js and helper.js. 
+8. Created model folder create files 
 
-from your previous projects. This contains the helper.js (which contains a nice wrapper around DB connections, so we can use the db() function from within our code), and it also contains the database.js file, which is the migration file for our project (you will need to modify this file so it contains YOUR database tables definitions and dummy data)
-9. Add a new script into your package.json file, that we will use to run our migrations: "migrate": "node model/database.js". Eventually, when you want to run migrations, you will need to run npm run migrate or yarn migrate
-10. Modify the start script so it uses nodemon instead of node: "start": "nodemon ./bin/www"
+database.js and paste this code - This is the migration file for the project, it is neededed to modify this file so it contains the database tables definitions and dummy data)
+```
+require("dotenv").config();
+const mysql = require("mysql");
+
+const DB_HOST = process.env.DB_HOST;
+const DB_USER = process.env.DB_USER;
+const DB_PASS = process.env.DB_PASS;
+const DB_NAME = process.env.DB_NAME;
+
+const con = mysql.createConnection({
+  host: DB_HOST || "127.0.0.1",
+  user: DB_USER || " INSERT DB USER_NAME",
+  password: DB_PASS,
+  database: DB_NAME || "INSERT DB_NAME ",
+  multipleStatements: true
+});
+```
+
+and helper.js- paste this code   - It contains a nice wrapper around DB connections, so you can use the db() function from within the code)
+```
+
+require("dotenv").config();
+const mysql = require("mysql");
+
+module.exports = async function db(query) {
+  const results = {
+    data: [],
+    error: null
+  };
+  let promise = await new Promise((resolve, reject) => {
+    const DB_HOST = process.env.DB_HOST;
+    const DB_USER = process.env.DB_USER;
+    const DB_PASS = process.env.DB_PASS;
+    const DB_NAME = process.env.DB_NAME;
+
+    const con = mysql.createConnection({
+      host: DB_HOST || "127.0.0.1",
+      user: DB_USER || "root",
+      password: DB_PASS,
+      database: DB_NAME || "database",
+      multipleStatements: true
+    });
+
+    con.connect(function(err) {
+      if (err) throw err;
+      console.log("Connected!");
+
+      con.query(query, function(err, result) {
+        if (err) {
+          results.error = err;
+          console.log(err);
+          reject(err);
+          con.end();
+          return;
+        }
+
+        if (!result.length) {
+          if (result.affectedRows === 0) {
+            results.error = "Action not complete";
+            console.log(err);
+            reject(err);
+            con.end();
+            return;
+          }
+
+          // push the result (which should be an OkPacket) to data
+          // germinal - removed next line because it returns an array in an array when empty set
+          // results.data.push(result);
+        } else if (result[0].constructor.name == "RowDataPacket") {
+          // push each row (RowDataPacket) to data
+          result.forEach(row => results.data.push(row));
+        } else if (result[0].constructor.name == "OkPacket") {
+          // push the first item in result list to data (this accounts for situations
+          // such as when the query ends with SELECT LAST_INSERT_ID() and returns an insertId)
+          results.data.push(result[0]);
+        }
+
+        con.end();
+        resolve(results);
+      });
+    });
+  });
+
+  return promise;
+};
+
+```
+
+9. Add a new script into the package.json file, it will be used to run migrations: 
+```
+"migrate": "node model/database.js". 
+```
+When running migrations, you will need to run 
+```
+npm run migrate or yarn migrate
+```
+
+10. Modify the start script so it uses nodemon instead of node: 
+```
+"start": "nodemon ./bin/www"
+```
+
 11. Created a .env file in the Express project root to store private data and passwords (such as DB pass) 
 
 ```
