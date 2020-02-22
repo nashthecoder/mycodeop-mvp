@@ -3,76 +3,27 @@
 #Grant Tracker 
 # Full Stack App
 
-# It should contain the following features: 
-Submit and monitor grant reports
-Check the status of grant payments
-Receive email notifications on reports
-Uploaded and payments disbursed
-Request a copy of a grant letter
-Update contact, staff, and payment information 
-
-# USERS 
-
-Administrator can 
-Login into platform 
-Create new users and add basic information
-Add comments to reports
-Create alerts when reports are due 
-Create alerts when reports are overdue
-Delete users
-Deletes reports
-Send user queries on issues on report Approve grant submitted reports
-Update grant staff and payment information.
-Noitfy user on grants disbursed
-
-Users 
-Login to platform
-Input narrative reports due on the grant 
-Upload financial reports due on the grant 
-Upload pictures to accompany report
-Upload scanned receipts 
-Submit narrative reports due on the grant 
-Submit financial reports due on the grant 
-Submit pictures to accompany report
-Submit scanned receipts Monitor reports due on the grant 
-Monitor queries on submitted reports
-Check status of grant payments : disbursed pending disbursement
-
-# https://expressjs.com/en/starter/hello-world.html
-
-# Grant Tracker: API Routes Design https://docs.google.com/document/d/1fv-lPk2_WEqXf-TM0xAD8asokiILzcyseizq-JpTX2E/edit?usp=sharing
-
 ##Technologies: React, Node/Express, Material UI and MySQL.
 
 ## Process 
 
 - Built a database.
 - Build an API server.
-- Created a front end. ( Bonus) 
-- Link front end to back end 
-- Add login and front end validation
+- Created a front end. 
 
 ## Setup
-
-1. Scaffold the Express application with npx express-generator
-
-2. Remove the /views folder (we don't use it)
-
-3. Remove the view engine setup in app.js file (lines 12-14), because we're not using any backend template renderers
-
-4. Change res.render('error'); to res.send('error'); (again, we're not rendering anything from the backend, we're just sending responses back to the client)
-5. Install packages that you may use, such as MySQL, Nodemon, or Dotenv: npm install mysql nodemon dotenv
-
+1. Scaffold Express application with npx express-generator
+2. Remove the /views folder (Not used for this application)
+3. Remove the view engine setup in app.js file (lines 12-14), 
+4. Change res.render('error'); to res.send('error'); 
+5. Install packages MySQL, Nodemon, or Dotenv: npm install mysql nodemon dotenv
 6. In file package.json, remove jade from the dependencies list
-
 7. Install dependencies with npm install or yarn
+8. Created model folder create files database.js and helper.js. 
 
-8. Created model folder from your previous projects. This contains the helper.js (which contains a nice wrapper around DB connections, so we can use the db() function from within our code), and it also contains the database.js file, which is the migration file for our project (you will need to modify this file so it contains YOUR database tables definitions and dummy data)
-
+from your previous projects. This contains the helper.js (which contains a nice wrapper around DB connections, so we can use the db() function from within our code), and it also contains the database.js file, which is the migration file for our project (you will need to modify this file so it contains YOUR database tables definitions and dummy data)
 9. Add a new script into your package.json file, that we will use to run our migrations: "migrate": "node model/database.js". Eventually, when you want to run migrations, you will need to run npm run migrate or yarn migrate
-
 10. Modify the start script so it uses nodemon instead of node: "start": "nodemon ./bin/www"
-
 11. Created a .env file in the Express project root to store private data and passwords (such as DB pass) 
 
 ```
@@ -116,21 +67,18 @@ Run `node model/database.js` in your **TERMINAL**, in the **root** folder of you
 - Use that query to finish the endpoint in `routes/api.js`.
 - Test endpoint using Postman.
 
-### 3. Finish the front end
+### 3. Created front end
+1: Run:
+```
+npx create-react-app my-app
+cd my-app
+npm start
 
-- [ ] Spend time reviewing the existing code in `client/src/App.js`.
-- [ ] Finish populating `this.state.tasks` from the API call in `componentDidMount`.
-  - Read about the `componentDidMount` method [in the React Docs](https://reactjs.org/docs/state-and-lifecycle.html)
-- [ ] Then, add a list of tasks to the DOM. Each task should have the following:
-  - The text of the task.
-  - A strike through (using CSS) if the task is complete.
-  - Two buttons:
-    - One button to mark the task complete (this should call the updateTask method)
-    - One button to delete the task (this should call the deleteTask method)
-- [ ] Finish the updateTask method so it calls the server.
-- [ ] Finish the deleteTask method so it calls the server.
-- [ ] Add styling.
+```
 
+Pending - 
+- Link front end to back end 
+- Add login and front end validation (Added feature)
 ## Resources
 
 - [React components for faster and easier web development.] (https://material-ui.com/)
@@ -139,7 +87,7 @@ Run `node model/database.js` in your **TERMINAL**, in the **root** folder of you
 - [MySQL Cheat Sheet](http://www.mysqltutorial.org/mysql-cheat-sheet.aspx)
 - [MySQL](https://dev.mysql.com/doc/refman/8.0/en/database-use.html)
 - [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-- [`componentDidMount` method in the React Docs](https://reactjs.org/docs/state-and-lifecycle.html)
+- [componentDidMount method](https://reactjs.org/docs/state-and-lifecycle.html)
 - [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 - [React Documentation](https://reactjs.org/docs/hello-world.html)
 
