@@ -181,7 +181,7 @@ Pending -
 - Add login and front end validation (Added feature)
 ## Resources
 
-- [React components for faster and easier web development.] (https://material-ui.com/)
+- [React components for faster and easier web development] (https://material-ui.com/)
 - [Multi Step Form With React & Material UI](https://www.youtube.com/watch?v=zT62eVxShsY)
 - [Step by step React, NodejS and MySQL Simple Full Stack Application 2018](https://dev.to/kmaryam27/step-by-step-react-nodejs-and-mysql-simple-full-stack-application-2018-part-4-2bhg)
 - [MySQL Cheat Sheet](http://www.mysqltutorial.org/mysql-cheat-sheet.aspx)
