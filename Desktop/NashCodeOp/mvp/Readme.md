@@ -1,46 +1,7 @@
 # Project Title
 
 #Grant Tracker 
-# Full Stack To Do App
-
-# It should contain the following features: 
-Submit and monitor grant reports
-Check the status of grant payments
-Receive email notifications on reports
-Uploaded and payments disbursed
-Request a copy of a grant letter
-Update contact, staff, and payment information 
-
-# USERS 
-
-Administrator can 
-Login into platform 
-Create new users and add basic information
-Add comments to reports
-Create alerts when reports are due 
-Create alerts when reports are overdue
-Delete users
-Deletes reports
-Send user queries on issues on report Approve grant submitted reports
-Update grant staff and payment information.
-Noitfy user on grants disbursed
-
-Users 
-Login to platform
-Input narrative reports due on the grant 
-Upload financial reports due on the grant 
-Upload pictures to accompany report
-Upload scanned receipts 
-Submit narrative reports due on the grant 
-Submit financial reports due on the grant 
-Submit pictures to accompany report
-Submit scanned receipts Monitor reports due on the grant 
-Monitor queries on submitted reports
-Check status of grant payments : disbursed pending disbursement
-
-# https://expressjs.com/en/starter/hello-world.html
-
-# Grant Tracker: API Routes Design https://docs.google.com/document/d/1fv-lPk2_WEqXf-TM0xAD8asokiILzcyseizq-JpTX2E/edit?usp=sharing
+# Full Stack App
 
 ##Technologies: React, Node/Express, Material UI and MySQL.
 
@@ -48,30 +9,120 @@ Check status of grant payments : disbursed pending disbursement
 
 - Built a database.
 - Build an API server.
-- Created a front end. ( Bonus) 
-- Link front end to back end 
-- Add login and front end validation
+- Created a front end. 
 
 ## Setup
-
-1. Scaffold the Express application with npx express-generator
-
-2. Remove the /views folder (we don't use it)
-
-3. Remove the view engine setup in app.js file (lines 12-14), because we're not using any backend template renderers
-
-4. Change res.render('error'); to res.send('error'); (again, we're not rendering anything from the backend, we're just sending responses back to the client)
-5. Install packages that you may use, such as MySQL, Nodemon, or Dotenv: npm install mysql nodemon dotenv
-
+1. Scaffold Express application with npx express-generator
+2. Remove the /views folder (Not used for this application)
+3. Remove the view engine setup in app.js file (lines 12-14), 
+4. Change res.render('error'); to res.send('error'); 
+5. Install packages MySQL, Nodemon, or Dotenv: npm install mysql nodemon dotenv
 6. In file package.json, remove jade from the dependencies list
-
 7. Install dependencies with npm install or yarn
+8. Created model folder create files 
 
-8. Created model folder from your previous projects. This contains the helper.js (which contains a nice wrapper around DB connections, so we can use the db() function from within our code), and it also contains the database.js file, which is the migration file for our project (you will need to modify this file so it contains YOUR database tables definitions and dummy data)
+database.js and paste this code - This is the migration file for the project, it is neededed to modify this file so it contains the database tables definitions and dummy data)
+```
+require("dotenv").config();
+const mysql = require("mysql");
 
-9. Add a new script into your package.json file, that we will use to run our migrations: "migrate": "node model/database.js". Eventually, when you want to run migrations, you will need to run npm run migrate or yarn migrate
+const DB_HOST = process.env.DB_HOST;
+const DB_USER = process.env.DB_USER;
+const DB_PASS = process.env.DB_PASS;
+const DB_NAME = process.env.DB_NAME;
 
-10. Modify the start script so it uses nodemon instead of node: "start": "nodemon ./bin/www"
+const con = mysql.createConnection({
+  host: DB_HOST || "127.0.0.1",
+  user: DB_USER || " INSERT DB USER_NAME",
+  password: DB_PASS,
+  database: DB_NAME || "INSERT DB_NAME ",
+  multipleStatements: true
+});
+```
+
+and helper.js- paste this code   - It contains a nice wrapper around DB connections, so you can use the db() function from within the code)
+```
+
+require("dotenv").config();
+const mysql = require("mysql");
+
+module.exports = async function db(query) {
+  const results = {
+    data: [],
+    error: null
+  };
+  let promise = await new Promise((resolve, reject) => {
+    const DB_HOST = process.env.DB_HOST;
+    const DB_USER = process.env.DB_USER;
+    const DB_PASS = process.env.DB_PASS;
+    const DB_NAME = process.env.DB_NAME;
+
+    const con = mysql.createConnection({
+      host: DB_HOST || "127.0.0.1",
+      user: DB_USER || "root",
+      password: DB_PASS,
+      database: DB_NAME || "database",
+      multipleStatements: true
+    });
+
+    con.connect(function(err) {
+      if (err) throw err;
+      console.log("Connected!");
+
+      con.query(query, function(err, result) {
+        if (err) {
+          results.error = err;
+          console.log(err);
+          reject(err);
+          con.end();
+          return;
+        }
+
+        if (!result.length) {
+          if (result.affectedRows === 0) {
+            results.error = "Action not complete";
+            console.log(err);
+            reject(err);
+            con.end();
+            return;
+          }
+
+          // push the result (which should be an OkPacket) to data
+          // germinal - removed next line because it returns an array in an array when empty set
+          // results.data.push(result);
+        } else if (result[0].constructor.name == "RowDataPacket") {
+          // push each row (RowDataPacket) to data
+          result.forEach(row => results.data.push(row));
+        } else if (result[0].constructor.name == "OkPacket") {
+          // push the first item in result list to data (this accounts for situations
+          // such as when the query ends with SELECT LAST_INSERT_ID() and returns an insertId)
+          results.data.push(result[0]);
+        }
+
+        con.end();
+        resolve(results);
+      });
+    });
+  });
+
+  return promise;
+};
+
+```
+
+9. Add a new script into the package.json file, it will be used to run migrations: 
+```
+"migrate": "node model/database.js". 
+```
+When running migrations, you will need to run 
+```
+npm run migrate or yarn migrate
+```
+
+10. Modify the start script so it uses nodemon instead of node: 
+```
+"start": "nodemon ./bin/www"
+```
 
 11. Created a .env file in the Express project root to store private data and passwords (such as DB pass) 
 
@@ -116,30 +167,27 @@ Run `node model/database.js` in your **TERMINAL**, in the **root** folder of you
 - Use that query to finish the endpoint in `routes/api.js`.
 - Test endpoint using Postman.
 
-### 3. Finish the front end
+### 3. Created front end
+1: Run:
+```
+npx create-react-app my-app
+cd my-app
+npm start
 
-- [ ] Spend time reviewing the existing code in `client/src/App.js`.
-- [ ] Finish populating `this.state.tasks` from the API call in `componentDidMount`.
-  - Read about the `componentDidMount` method [in the React Docs](https://reactjs.org/docs/state-and-lifecycle.html)
-- [ ] Then, add a list of tasks to the DOM. Each task should have the following:
-  - The text of the task.
-  - A strike through (using CSS) if the task is complete.
-  - Two buttons:
-    - One button to mark the task complete (this should call the updateTask method)
-    - One button to delete the task (this should call the deleteTask method)
-- [ ] Finish the updateTask method so it calls the server.
-- [ ] Finish the deleteTask method so it calls the server.
-- [ ] Add styling.
+```
 
+Pending - 
+- Link front end to back end 
+- Add login and front end validation (Added feature)
 ## Resources
 
-- [React components for faster and easier web development.] (https://material-ui.com/)
+- [React components for faster and easier web development] (https://material-ui.com/)
 - [Multi Step Form With React & Material UI](https://www.youtube.com/watch?v=zT62eVxShsY)
 - [Step by step React, NodejS and MySQL Simple Full Stack Application 2018](https://dev.to/kmaryam27/step-by-step-react-nodejs-and-mysql-simple-full-stack-application-2018-part-4-2bhg)
 - [MySQL Cheat Sheet](http://www.mysqltutorial.org/mysql-cheat-sheet.aspx)
 - [MySQL](https://dev.mysql.com/doc/refman/8.0/en/database-use.html)
 - [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-- [`componentDidMount` method in the React Docs](https://reactjs.org/docs/state-and-lifecycle.html)
+- [componentDidMount method](https://reactjs.org/docs/state-and-lifecycle.html)
 - [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 - [React Documentation](https://reactjs.org/docs/hello-world.html)
 
