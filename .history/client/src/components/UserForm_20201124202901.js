@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 //import OrgForm from './OrgForm';
 import NarrativeForm from './NarrativeForm.js';
 import FinancialForm from './FinancialForm.js';
-import OrgForm from './OrgForm.js';
 import Success from './Success.js';
 
 export class UserForm extends Component {
@@ -46,21 +45,13 @@ handleChange = input => e =>{
         switch(step) {
             case 1: 
                 return (
-                    < OrgForm
-                    nextStep={this.nextStep}
-                    handleChange={this.handleChange}
-                    values={values}
-                />
-            );
-            case 2: 
-                return (
                     < NarrativeForm
                     nextStep={this.nextStep}
                     handleChange={this.handleChange}
                     values={values}
                 />
             );
-            case 3:
+            case 2:
                 return (
                     < FinancialForm
                     nextStep={this.nextStep}
@@ -69,7 +60,7 @@ handleChange = input => e =>{
                     values={values}
                 />
                 );
-            case 4:
+            case 3:
                 return < Success />
         }
             
