@@ -60,6 +60,7 @@ export class NarrativeForm extends Component {
                 onChange={handleChange('risks')}
                 defaultValue={values.risks}
                 />
+                <br/>
                 <TextField 
                 hintText="Enter Issues"
                 floatingLabeltext="Issues"

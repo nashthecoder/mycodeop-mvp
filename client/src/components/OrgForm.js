@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import FormControl from '@material-ui/core/FormControl';
 
 //linked to POST User
 export class OrgForm extends Component {
@@ -16,65 +18,71 @@ export class OrgForm extends Component {
         <MuiThemeProvider>
             <React.Fragment>
                 <AppBar title="Grantee Organisation Details" />
+                <FormControl>
                 <TextField 
+                id="outlined_multiline-static"
+                variant="outlined"
                 hintText="Insert Organisation Name"
                 floatingLabeltext="Organisation Name"
                 onChange={handleChange('orgName')}
                 defaultValue={values.orgName}
                 />
+                <div>
+                    <TextField 
+                    hintText="Insert Project Name"
+                    floatingLabeltext="Project Name"
+                    onChange={handleChange('projectName')}
+                    defaultValue={values.projectName}
+                    />
+                    <TextField 
+                    hintText="Insert Project Code"
+                    floatingLabeltext="Project Code"
+                    onChange={handleChange('projectCode')}
+                    defaultValue={values.projectCode}
+                    />
+                </div>
+                <div>
+                    <TextField 
+                    hintText="Insert Region"
+                    floatingLabeltext="Region"
+                    onChange={handleChange('region')}
+                    defaultValue={values.region}
+                    />
+                    <TextField 
+                    hintText="Insert City"
+                    floatingLabeltext="City"
+                    onChange={handleChange('city')}
+                    defaultValue={values.city}
+                    />
+                </div>
+                <div>
+                    <TextField 
+                    hintText="Insert Grant Amount"
+                    floatingLabeltext="Grant Amount"
+                    onChange={handleChange('grantAmount')}
+                    defaultValue={values.grantAmount}
+                    /> 
+                    <TextField 
+                    hintText="Insert Grant Period"
+                    floatingLabeltext="Grant Period"
+                    onChange={handleChange('grantPeriod')}
+                    defaultValue={values.grantPeriod}
+                    />
+                </div>
                 <br/>
-                <TextField 
-                hintText="Insert Project Name"
-                floatingLabeltext="Project Name"
-                onChange={handleChange('projectName')}
-                defaultValue={values.projectName}
-                />
-                <br/>
-                <TextField 
-                hintText="Insert Project Code"
-                floatingLabeltext="Project Code"
-                onChange={handleChange('projectCode')}
-                defaultValue={values.projectCode}
-                />
-                <br/>
-                <TextField 
-                hintText="Insert Region"
-                floatingLabeltext="Region"
-                onChange={handleChange('region')}
-                defaultValue={values.region}
-                />
-                <br/>
-                <TextField 
-                hintText="Insert City"
-                floatingLabeltext="City"
-                onChange={handleChange('city')}
-                defaultValue={values.city}
-                />
-                <br/>
-                <TextField 
-                hintText="Insert Grant Amount"
-                floatingLabeltext="Grant Amount"
-                onChange={handleChange('grantAmount')}
-                defaultValue={values.grantAmount}
-                />
-                <br/>
-                <TextField 
-                hintText="Insert Grant Period"
-                floatingLabeltext="Grant Period"
-                onChange={handleChange('grantPeriod')}
-                defaultValue={values.grantPeriod}
-                />
-                <br/>
-                <RaisedButton label="Create User"
-                primary={true}
-                style={styles.button}
-                onClick={this.submit}
-                />
-                <RaisedButton label="Report"
-                primary={true}
-                style={styles.button}
-                onClick={this.continue}
-                />
+                <div>
+                    <RaisedButton label="Create User"
+                    primary={true}
+                    style={styles.button}
+                    onClick={this.submit}
+                    />
+                    <RaisedButton label="Report"
+                    primary={true}
+                    style={styles.button}
+                    onClick={this.continue}
+                    />
+                </div>
+                </FormControl>
             </React.Fragment>
         </MuiThemeProvider>   
         )

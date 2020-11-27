@@ -39,46 +39,40 @@ export class NarrativeForm extends Component {
                 defaultValue={values.taskCompleted}
                 />
                 </div>
-                <div>
+                <br/>
                 <TextField 
                 hintText="Enter Task Pending"
                 floatingLabeltext="Task Pending"
                 onChange={handleChange('taskPending')}
                 defaultValue={values.region}
                 />
+                <br/>
                 <TextField 
                 hintText="Enter Task Delayed"
                 floatingLabeltext="TasksDelayed"
                 onChange={handleChange('taskDelayed')}
                 defaultValue={values.taskDelayed}
                 />
-                </div>
-                <div>
+                <br/>
                 <TextField 
                 hintText="Enter Risks"
                 floatingLabeltext="Risks"
                 onChange={handleChange('risks')}
                 defaultValue={values.risks}
                 />
+                <br/>
                 <TextField 
                 hintText="Enter Issues"
                 floatingLabeltext="Issues"
                 onChange={handleChange('issues')}
                 defaultValue={values.issues}
                 />
-                </div>
-                <div>
-                <RaisedButton label="Back"
+                <br/>
+                <RaisedButton label="Continue"
                 primary={true}
                 style={styles.button}
                 onClick={this.continue}
                 />
-                <RaisedButton label="Next"
-                primary={true}
-                style={styles.button}
-                onClick={this.continue}
-                />
-                </div>
                 </FormControl>
             </React.Fragment>
         </MuiThemeProvider>   
