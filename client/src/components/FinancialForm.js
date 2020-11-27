@@ -55,7 +55,7 @@ export class FinancialForm extends Component {
                 defaultValue={values.totals} */}
             
                 <br/>
-                <RaisedButton label="Continue"
+                <RaisedButton label="Submit"
                 primary={true}
                 style={styles.button}
                 onClick={this.continue}

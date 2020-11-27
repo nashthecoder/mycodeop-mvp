@@ -56,6 +56,7 @@ handleChange = input => e =>{
                 return (
                     < NarrativeForm
                     nextStep={this.nextStep}
+                    prevStep={this.prevStep}
                     handleChange={this.handleChange}
                     values={values}
                 />
@@ -64,7 +65,7 @@ handleChange = input => e =>{
                 return (
                     < FinancialForm
                     nextStep={this.nextStep}
-                    prevStep={this.prevStep}
+                    
                     handleChange={this.handleChange}
                     values={values}
                 />

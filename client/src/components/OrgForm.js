@@ -6,6 +6,10 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 //linked to POST User
 export class OrgForm extends Component {
+    continue = e => {
+        e.preventDefault();
+        this.props.nextStep();
+    }
     render() {
         const { values, handleChange } = this.props;
         return (
@@ -65,6 +69,11 @@ export class OrgForm extends Component {
                 primary={true}
                 style={styles.button}
                 onClick={this.submit}
+                />
+                <RaisedButton label="Report"
+                primary={true}
+                style={styles.button}
+                onClick={this.continue}
                 />
             </React.Fragment>
         </MuiThemeProvider>   
