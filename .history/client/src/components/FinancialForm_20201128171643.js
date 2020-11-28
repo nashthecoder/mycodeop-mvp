@@ -33,6 +33,7 @@ export class FinancialForm extends Component {
                         defaultValue={values.budgetLine}
                         />
                     </Grid>
+                    <br></br>
                     <Grid>
                         <TextField 
                         hintText="Project Budget"
@@ -41,6 +42,7 @@ export class FinancialForm extends Component {
                         defaultValue={values.projectBudget}
                         />
                     </Grid>
+                    <br></br>
                     <Grid>
                         <TextField 
                         hintText="Forecast Amount"
@@ -49,6 +51,7 @@ export class FinancialForm extends Component {
                         defaultValue={values.forecastAmount}
                         />
                     </Grid>
+                    <br></br>
                     <Grid>
                         <TextField 
                         hintText="Actual Amount"
@@ -57,6 +60,7 @@ export class FinancialForm extends Component {
                         defaultValue={values.actualAmount}
                         />
                     </Grid>
+                    <br></br>
                     <Grid>
                         <TextField 
                         id="outlined-secondary"

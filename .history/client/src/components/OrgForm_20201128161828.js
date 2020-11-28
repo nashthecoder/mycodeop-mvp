@@ -20,14 +20,13 @@ export class OrgForm extends Component {
             <React.Fragment>
             <AppBar title="Grantee Organisation Details" />
             <FormControl>
-                <br></br>
-                <div class="form__header">
-                    <h6 id="form-text">Fill in user details</h6>
+                <div>
+                    <h5 id="form-text">Fill in user details</h5>
                 </div>
-                <Grid container spacing={3}>
+                <Grid container spacing={5}>
                     <Grid item xs={12}>
                         <TextField 
-                        id="outlined-basic"
+                        id="outlined_multiline-static"
                         variant="outlined"
                         hintText="Insert Organisation Name"
                         floatingLabeltext="Organisation Name"
@@ -99,6 +98,74 @@ export class OrgForm extends Component {
                     </Grid>
                 </Grid>
             </FormControl>
+                <div>
+                    <h5 id="form-text">Fill in user details</h5>
+                </div>
+                <FormControl>
+                <TextField 
+                id="outlined_multiline-static"
+                variant="outlined"
+                hintText="Insert Organisation Name"
+                floatingLabeltext="Organisation Name"
+                onChange={handleChange('orgName')}
+                defaultValue={values.orgName}
+                />
+                <div>
+                    <TextField 
+                    hintText="Insert Project Name"
+                    floatingLabeltext="Project Name"
+                    onChange={handleChange('projectName')}
+                    defaultValue={values.projectName}
+                    />
+                    <TextField 
+                    hintText="Insert Project Code"
+                    floatingLabeltext="Project Code"
+                    onChange={handleChange('projectCode')}
+                    defaultValue={values.projectCode}
+                    />
+                </div>
+                <div>
+                    <TextField 
+                    hintText="Insert Region"
+                    floatingLabeltext="Region"
+                    onChange={handleChange('region')}
+                    defaultValue={values.region}
+                    />
+                    <TextField 
+                    hintText="Insert City"
+                    floatingLabeltext="City"
+                    onChange={handleChange('city')}
+                    defaultValue={values.city}
+                    />
+                </div>
+                <div>
+                    <TextField 
+                    hintText="Insert Grant Amount"
+                    floatingLabeltext="Grant Amount"
+                    onChange={handleChange('grantAmount')}
+                    defaultValue={values.grantAmount}
+                    /> 
+                    <TextField 
+                    hintText="Insert Grant Period"
+                    floatingLabeltext="Grant Period"
+                    onChange={handleChange('grantPeriod')}
+                    defaultValue={values.grantPeriod}
+                    />
+                </div>
+                <br/>
+                <div>
+                    <RaisedButton label="Login"
+                    primary={true}
+                    style={styles.button}
+                    onClick={this.submit}
+                    />
+                    <RaisedButton label="Report"
+                    primary={true}
+                    style={styles.button}
+                    onClick={this.continue}
+                    />
+                </div>
+                </FormControl>
             </React.Fragment>
         </MuiThemeProvider>   
         )
@@ -108,11 +175,7 @@ export class OrgForm extends Component {
 const styles = {
     button: {
         margin: 15,
-    }, 
-    
-    formHeader: {
-        paddingTop: 15,
-      }
+    }
 };
 
 export default OrgForm

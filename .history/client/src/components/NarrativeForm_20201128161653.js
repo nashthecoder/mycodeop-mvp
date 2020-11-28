@@ -22,7 +22,7 @@ export class NarrativeForm extends Component {
         return (
             <MuiThemeProvider>
             <React.Fragment>
-                <AppBar title="Narrative Report Section" />
+                <AppBar title="Narrative Report" />
                 <FormControl>
                 <Grid container spacing={10}>
                     <Grid item xs={12}>
@@ -35,9 +35,8 @@ export class NarrativeForm extends Component {
                     </Grid>
                     <Grid item xs={12}>
                         <TextField 
-                        id="outlined-textarea"
                         hintText="Enter Project Summary"
-                        variant=" Project Summary "
+                        floatingLabeltext=" Project Summary "
                         onChange={handleChange('projectSummary')}
                         defaultValue={values.projectSummary}
                         />

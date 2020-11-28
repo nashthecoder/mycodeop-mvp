@@ -13,10 +13,16 @@ render () {
                 <AppBar title="Report Submitted"/>
                 <h3> Thank you for your report submission</h3>
                 <h6>You will get an email with a copy of the completed report</h6>
+                <form>
+                    <TextField id="standard-basic" label="Standard" />
+                    <TextField id="filled-basic" label="Filled" variant="filled" />
+                    <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+                </form>
             </React.Fragment>
         </MuiThemeProvider>
-        )
-    }
+    )
+}
+
 }
 
 export default Success;

@@ -20,14 +20,15 @@ export class OrgForm extends Component {
             <React.Fragment>
             <AppBar title="Grantee Organisation Details" />
             <FormControl>
-                <br></br>
                 <div class="form__header">
-                    <h6 id="form-text">Fill in user details</h6>
+                    <h6 id="form-text"
+                    marginTop={10}
+                    >Fill in user details</h6>
                 </div>
                 <Grid container spacing={3}>
                     <Grid item xs={12}>
                         <TextField 
-                        id="outlined-basic"
+                        id="outlined_multiline-static"
                         variant="outlined"
                         hintText="Insert Organisation Name"
                         floatingLabeltext="Organisation Name"

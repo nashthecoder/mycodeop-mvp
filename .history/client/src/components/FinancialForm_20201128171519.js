@@ -22,7 +22,6 @@ export class FinancialForm extends Component {
             <MuiThemeProvider>
             <React.Fragment>
                 <AppBar title="Financial Report Section" />
-                <br></br>
                 <Grid container spacing={3}>
                     <Grid>
                         <TextField 

@@ -15,8 +15,9 @@ render () {
                 <h6>You will get an email with a copy of the completed report</h6>
             </React.Fragment>
         </MuiThemeProvider>
-        )
-    }
+    )
+}
+
 }
 
 export default Success;

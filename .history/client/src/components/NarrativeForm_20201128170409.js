@@ -22,7 +22,7 @@ export class NarrativeForm extends Component {
         return (
             <MuiThemeProvider>
             <React.Fragment>
-                <AppBar title="Narrative Report Section" />
+                <AppBar title="Narrative Report" />
                 <FormControl>
                 <Grid container spacing={10}>
                     <Grid item xs={12}>
