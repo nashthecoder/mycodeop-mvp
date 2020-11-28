@@ -44,10 +44,10 @@
 ### Technologies: React, Node/Express, Material UI and MySQL.
 
 ### MVP Features include: 
-Organisational Profile Page
-Narrative Report Page
-Financial Report Page
-Submissions confirmation page 
+ - Organisational Profile Page
+ - Narrative Report Page
+ - Financial Report Page
+ - Submissions confirmation page 
 
 ### Notes
 
