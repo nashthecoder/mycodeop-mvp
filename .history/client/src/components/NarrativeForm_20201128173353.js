@@ -49,7 +49,6 @@ export class NarrativeForm extends Component {
                         floatingLabeltext="Task Completed"
                         onChange={handleChange('taskCompleted')}
                         defaultValue={values.taskCompleted}
-                        margin="normal" multiLine
                         />
                     </Grid>
                     <Grid item xs={6}>
@@ -57,8 +56,7 @@ export class NarrativeForm extends Component {
                         hintText="Enter Task Pending"
                         floatingLabeltext="Task Pending"
                         onChange={handleChange('taskPending')}
-                        defaultValue={values.taskPending}
-                        margin="normal" multiLine
+                        defaultValue={values.region}
                         />
                     </Grid>
                     <Grid item xs={6}>
@@ -67,7 +65,6 @@ export class NarrativeForm extends Component {
                         floatingLabeltext="TasksDelayed"
                         onChange={handleChange('taskDelayed')}
                         defaultValue={values.taskDelayed}
-                        margin="normal" multiLine
                         />
                     </Grid>
                     <Grid item xs={6}>
@@ -76,7 +73,6 @@ export class NarrativeForm extends Component {
                         floatingLabeltext="Risks"
                         onChange={handleChange('risks')}
                         defaultValue={values.risks}
-                        margin="normal" multiLine
                         />
                     </Grid>
                     <Grid item xs={6}>
@@ -85,7 +81,6 @@ export class NarrativeForm extends Component {
                         floatingLabeltext="Issues"
                         onChange={handleChange('issues')}
                         defaultValue={values.issues}
-                        margin="normal" multiLine
                         />
                     </Grid>
                     <Grid item xs={6}>

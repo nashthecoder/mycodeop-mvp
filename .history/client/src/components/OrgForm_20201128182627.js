@@ -5,6 +5,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import FormControl from '@material-ui/core/FormControl';
 import Grid from '@material-ui/core/Grid';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 
 //linked to POST User
@@ -74,6 +75,7 @@ export class OrgForm extends Component {
                         floatingLabeltext="Grant Amount"
                         onChange={handleChange('grantAmount')}
                         defaultValue={values.grantAmount}
+                        startAdornment={<InputAdornment position="start">$</InputAdornment>}
                         /> 
                     </Grid>
                     <Grid item xs={6}>

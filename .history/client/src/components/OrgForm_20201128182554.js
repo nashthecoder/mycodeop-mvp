@@ -74,6 +74,7 @@ export class OrgForm extends Component {
                         floatingLabeltext="Grant Amount"
                         onChange={handleChange('grantAmount')}
                         defaultValue={values.grantAmount}
+                        startAdornment={<InputAdornment position="start">$</InputAdornment>}
                         /> 
                     </Grid>
                     <Grid item xs={6}>

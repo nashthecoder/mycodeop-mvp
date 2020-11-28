@@ -5,7 +5,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import FormControl from '@material-ui/core/FormControl';
 import Grid from '@material-ui/core/Grid';
-
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 //linked to POST User
 export class OrgForm extends Component {
@@ -110,10 +110,9 @@ const styles = {
     button: {
         margin: 15,
     }, 
-    
-    formHeader: {
-        paddingTop: 15,
-      }
+    textField: {
+        width: '25',
+      },
 };
 
 export default OrgForm

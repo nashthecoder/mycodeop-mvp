@@ -23,7 +23,7 @@ export class FinancialForm extends Component {
             <React.Fragment>
                 <AppBar title="Financial Report Section" />
                 <br></br>
-                <Grid container spacing={5}>
+                <Grid container spacing={3}>
                     <Grid>
                         <TextField 
                         id="outlined-secondary"

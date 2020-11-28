@@ -71,7 +71,7 @@ export class OrgForm extends Component {
                     <Grid item xs={6}>
                         <TextField 
                         hintText="Insert Grant Amount"
-                        floatingLabeltext="Grant Amount"
+                        floatingLabeltext="Grant Amount $"
                         onChange={handleChange('grantAmount')}
                         defaultValue={values.grantAmount}
                         /> 
