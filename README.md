@@ -41,7 +41,11 @@
 
 ### Grant Tracker: API Routes Design https://docs.google.com/document/d/1fv-lPk2_WEqXf-TM0xAD8asokiILzcyseizq-JpTX2E/edit?usp=sharing
 
-### Technologies: React, Node/Express, Material UI and MySQL.
+### Technologies: 
+ - React, 
+  - Node/Express, 
+   - Material UI and 
+   - MySQL.
 
 ### MVP Features include: 
  - Organisational Profile Page
