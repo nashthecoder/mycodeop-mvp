@@ -1,7 +1,7 @@
 # Grant Tracker 
 ## Full Stack App
 
-[App deployed](https://grant-tracker-mvp.netlify.app/) 
+[App deployed on Netlify](https://grant-tracker-mvp.netlify.app/) 
 
 ### The full functioning app will sontain the following features: 
 1. Submit and monitor grant reports
