@@ -1,0 +1,109 @@
+# afya_pap
+
+> A free-commerce project for NGOs providing free/subsidized health product built with Vue.js Node.js and Mongo DB
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [About The Project](#about-the-project)
+- [USER](#user)
+- [ADMIN](#admin)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+Tiko Pap is a e-commerce module for the main Tiko App to enable Tech Rafiki order products via D2C.
+
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
+
+
+App features
+## USER 
+* Search capability, filtered by type (contraceptive , test , service, offer)
+* Detailed page for each product ( side effects, type of method)
+* Create D2C account
+* Delivery based on location (google map)
+* Review order and check out - deliver or pick up closest Tiko provider
+* Order confirmation
+* Feedback form
+
+
+## ADMIN
+* Add products to shop,
+* Edit products, services and offers,
+* View orders
+
+
+
+### Built With
+* [VUE](https://reactjs.org/)
+* [Node.js](https://nodejs.org/en/)
+* [Express](https://expressjs.com/)
+* [MongoDB](https://www.mongodb.com/)
+* [Mongoose](https://mongoosejs.com/)
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
+
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+```
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/afya_pap`)
+3. Commit your Changes (`git commit -m 'Add some code'`)
+4. Push to the Branch (`git push origin feature/afya_pap`)
+5. Open a Pull Request
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. 
+
+
+<!-- CONTACT -->
+## Contact
+
+NashTheCoder - [@mumlovestech](https://twitter.com/mumlovestech) - naijeria@mumlovestech.com
+
+Project Link: 
+
+
+## Acknowledgements
+
+
+
